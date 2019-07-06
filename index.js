@@ -1,5 +1,3 @@
-console.log('Application started, button yet to be clicked');
-
 
 const forms = document.querySelectorAll("button[type=submit]");
 for (const form of forms) {
