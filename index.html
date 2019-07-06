@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    form{
+      width: 25%;
+      height:inherit;
+      overflow:auto;
+      float:left;
+    }
+  </style>
+</head>
+<body>
+    <form id="form">
+    <h1 id="productName">1</h1>
+    <img src="img\red.jpg" alt="Trial Image" width="10%" height="100%" class="images" id="productImg"><br>
+    <select name="category" id="package">
+        <option value="Business Plan">Business Plan</option>
+        <option value="Feasibility Report">Feasibility Report</option>
+    </select>
+  
+    <button type="submit" >Try it</button>
+  </form>
+  
+  <form id="form">
+    <h1 id="productName">2</h1>
+    <img src="img\yellow.jpg" alt="Trial Image" width="10%" height="100%" class="images" id="productImg"><br>
+    <select name="category" id="package">
+        <option value="Business Plan">Business Plan</option>
+        <option value="Feasibility Report">Feasibility Report</option>
+    </select>
+  
+    <button type="submit" >Try it</button>
+  </form>
+
+  <form id="form">
+    <h1 id="productName">3</h1>
+    <img src="img\blue.jpg" alt="Trial Image" width="10%" height="100%" class="images" id="productImg"><br>
+    <select name="category" id="package">
+        <option value="Business Plan">Business Plan</option>
+        <option value="Feasibility Report">Feasibility Report</option>
+    </select>
+  
+    <button type="submit" >Try it</button>
+  </form>
+
+  <form id="form">
+    <h1 class="productName">4</h1>
+    <img src="img\black.jpg" alt="Trial Image" width="10%" height="100%" class="images" id="productImg"><br>
+    <select name="category" id="package">
+        <option value="Business Plan">Business Plan</option>
+        <option value="Feasibility Report">Feasibility Report</option>
+    </select>
+  
+    <button type="submit" class="last">Try it</button>
+  </form>
+
+
+  <script>
+    console.log('Application started, button yet to be clicked');
+    /*
+    function buttonClicked(){
+      let productName = document.getElementById('productName').innerText;
+      let productImg = document.getElementById('productImg').src;
+      let package = document.getElementById('package').value;
+      alert('Working See Details Below:' + '\n' + productName + '\n\n' + productImg + '\n\n' + package);
+    }
+    */
+
+    const forms = document.querySelectorAll("button[type=submit]")
+    for (const form of forms) {
+      form.addEventListener('click', function(event) {
+        let productName = document.getElementById('productName').innerText;
+        let productImg = document.getElementById('productImg').src;
+        let package = document.getElementById('package').value;
+        alert('Working See Details Below:' + '\n' + productName + '\n\n' + productImg + '\n\n' + package);
+      })
+    }
+
+    for(i=0; i<10; i++){
+      console.log("form"+i);
+    }
+  </script>
+
+
+
+</body>
+</html>
