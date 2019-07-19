@@ -1,0 +1,40 @@
+<form class="form">
+  <select name="select" id="mySelect">
+    <option default value="choice1">Choice One</option>
+    <option value="choice2">Choice Two</option>
+  </select>
+  <button type="submit">Submit</button>
+</form>
+
+<form class="form">
+  <select name="select" id="mySelect2">
+    <option default value="choice1">Choice One</option>
+    <option value="choice2">Choice Two</option>
+  </select>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  let plans = {
+    mySelect: {
+      choice1: "https://mylink.com",
+      choice2: "https://myotherlink.com"
+    },
+    mySelect2: {
+      choice1: "https://my3rdlink.com",
+      choice2: "https://my4th.com"
+    }
+  }
+
+  //let select = document.querySelector("#mySelect")
+  let forms = Array.from(document.querySelectorAll(".form"))
+
+  forms.map(form =>
+    form.addEventListener("submit", event => {
+      event.preventDefault()
+
+      const formSelect = event.target.querySelector("select")
+      window.location.assign(plans[formSelect.id][formSelect.value])
+    })
+  )
+</script>
